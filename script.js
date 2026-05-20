@@ -99,8 +99,32 @@ const festivals = [
   { name: "दिवाली", date: "2026-11-08", note: "Diwali WhatsApp Status" }
 ];
 
+const ADSENSE_CLIENT = "ca-pub-7789321762913243";
 let currentLang = new URLSearchParams(location.search).get("lang") || "hi";
 if (!["hi", "en", "ru"].includes(currentLang)) currentLang = "hi";
+
+function createAdMarkup(position, label) {
+  return `
+    <span>${label}</span>
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="${ADSENSE_CLIENT}"
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+      data-ad-position="${position}"></ins>
+  `;
+}
+
+function initializeAds(root = document) {
+  root.querySelectorAll(".adsbygoogle:not([data-ads-initialized])").forEach((ad) => {
+    ad.dataset.adsInitialized = "true";
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (error) {
+      ad.dataset.adsError = "true";
+    }
+  });
+}
 
 function renderChalisa() {
   const grid = $("[data-chalisa]");
@@ -110,7 +134,9 @@ function renderChalisa() {
     if (index === 10 || index === 20) {
       const ad = document.createElement("aside");
       ad.className = "ad-slot verse-ad";
-      ad.innerHTML = `<span>AdSense Position ${index === 10 ? "2" : "3"}</span><strong>चालीसा के बीच strategic in-content ad</strong>`;
+      ad.setAttribute("aria-label", "Advertisement");
+      ad.dataset.adPosition = index === 10 ? "chalisa-after-10" : "chalisa-after-20";
+      ad.innerHTML = createAdMarkup(ad.dataset.adPosition, `AdSense Position ${index === 10 ? "2" : "3"}`);
       grid.append(ad);
     }
     const card = document.createElement("article");
@@ -118,6 +144,7 @@ function renderChalisa() {
     card.innerHTML = `<span>${index + 1}</span><p>${row[langIndex].replace(/\n/g, "<br>")}</p>`;
     grid.append(card);
   });
+  initializeAds(grid);
 }
 
 function renderAarti() {
@@ -345,6 +372,7 @@ function init() {
   bindEvents();
   initActiveNav();
   updateCountdown();
+  initializeAds();
   setInterval(updateCountdown, 1000);
 }
 
