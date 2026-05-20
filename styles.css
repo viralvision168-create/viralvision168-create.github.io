@@ -422,6 +422,11 @@ h3 {
   color: var(--muted);
 }
 
+.ad-slot .adsbygoogle {
+  width: 100%;
+  min-height: 90px;
+}
+
 .ad-inline {
   max-width: 760px;
   margin-inline: auto;
@@ -439,6 +444,11 @@ h3 {
 
 .ad-dark strong {
   color: rgba(255, 255, 255, 0.78);
+}
+
+.mobile-ad .adsbygoogle {
+  width: min(100%, 420px);
+  min-height: 48px;
 }
 
 .aarti-grid {
