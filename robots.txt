@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://viralvision168-create.github.io/sitemap.xml
