@@ -4,11 +4,13 @@ Static Hindi devotional website with:
 
 - Hanuman Chalisa, all 40 chaupai with Hindi, English and Russian toggle
 - 10 deity aarti cards
+- Complete aarti text for Shiv, Ganesh, Durga, Lakshmi, Krishna, Ram, Hanuman, Saraswati, Vishnu and Sai
 - Trending mantra vertical cards with 108x jap counter
 - WhatsApp Status download cards for weekdays and festivals
 - Hindu calendar next-festival countdown
 - 8 AdSense-ready strategic placeholder positions
 - SEO meta tags, hreflang, WebSite, FAQPage and BreadcrumbList JSON-LD
+- robots.txt, sitemap.xml, CollectionPage structured data and stronger Open Graph/Twitter tags
 
 ## Publish on GitHub Pages
 
