@@ -427,6 +427,32 @@ h3 {
   min-height: 90px;
 }
 
+.seo-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  padding: 18px clamp(16px, 5vw, 72px);
+  background: #fff;
+  border-block: 1px solid var(--line);
+}
+
+.seo-strip h2 {
+  margin: 0 8px 0 0;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.seo-strip a {
+  padding: 9px 12px;
+  color: var(--maroon);
+  background: #fff7f0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
 .ad-inline {
   max-width: 760px;
   margin-inline: auto;
@@ -479,6 +505,36 @@ h3 {
 .aarti-card p {
   color: var(--muted);
   white-space: pre-line;
+}
+
+.aarti-preview {
+  min-height: 112px;
+}
+
+.aarti-card details {
+  margin: 8px 0 16px;
+  color: var(--muted);
+}
+
+.aarti-card summary {
+  width: 100%;
+  padding: 10px 12px;
+  color: var(--green);
+  background: #f5fbf7;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.aarti-card details[open] summary {
+  margin-bottom: 12px;
+}
+
+.aarti-card details p {
+  max-height: 520px;
+  overflow: auto;
+  padding-right: 6px;
 }
 
 .aarti-card button {
